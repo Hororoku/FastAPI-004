@@ -19,7 +19,7 @@ async def root():
 
     # 文字列に変換 (24時間表記)
     formatted_now = now.strftime("%Y/%m/%d %H:%M:%S")
-    s = f'"Hello from Azure App Service FastAPI!" {formatted_now}'
+    s = f'Hello from Azure App Service FastAPI! {formatted_now}'
 
     return {
         "service": "root",
