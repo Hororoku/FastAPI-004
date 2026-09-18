@@ -1,5 +1,8 @@
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
+import datetime
+
+
 
 app = FastAPI(
     title="Sample Azure App Service API",
@@ -10,9 +13,17 @@ app = FastAPI(
 
 @app.get("/", response_class=JSONResponse)
 async def root():
+
+    # 現在の日時を取得
+    now = datetime.datetime.now()
+
+    # 文字列に変換 (24時間表記)
+    formatted_now = now.strftime("%Y/%m/%d %H:%M:%S")
+    s = f'"Hello from Azure App Service FastAPI!" {formatted_now}'
+
     return {
         "service": "root",
-        "message": "Hello from Azure App Service FastAPI!",
+        "message": s,
         "status": "ok",
     }
 
