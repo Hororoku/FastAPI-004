@@ -28,7 +28,7 @@ async def root():
     }
 
 @app.get("/image", response_class=JSONResponse)
-async def root():
+async def root_image():
     return {
         "service": "root",
         "message": "Hello from Azure App Service FastAPI!",
