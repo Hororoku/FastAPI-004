@@ -31,7 +31,7 @@ async def root():
 async def root_image():
     return {
         "service": "root",
-        "message": "Hello from Azure App Service FastAPI!",
+        "message": "Hello from Azure App Service FastAPI! (/image)",
         "status": "ok",
     }
 
